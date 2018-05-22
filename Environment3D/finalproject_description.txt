@@ -1,0 +1,28 @@
+This project contains a room with a conveyor belt and rotating meshes on the belt with a first camera perspective and a camera controllable by the mouse.
+
+The meshes include texture maps and rotate on their own axes.
+
+When the user presses S, the conveyor belt stops but the rotations continue. A GUI includes text that displays the name of the objects when they reach the middle of the screen. 
+D can then be pressed to display further details about the object.
+
+The implementation of the infinitely scrolling belt includes two sets of constructed meshes. The second set of meshes spawns right after the first one. But once the first set of meshes reaches a certain X point, it replaces the position of the second set of meshes.
+
+This has been done to create the illusion of an infinitely scrolling conveyor belt, even though it is just showing the same two sets over and over again.
+
+I’ve created an Environment class which is in charge of spawning the chairs, tables, and walls of the room.
+
+I’ve created a HUD class which handles the text you see at the top of the screen, the name of the meshes on the bottom of the screen, as well as the detail boxes.
+
+I’ve created a conveyorBelt class which handles the positioning, conveying, resetting, stop conveying and continue conveying behaviors of its objects.
+
+I’ve created a Meshes subclass of conveyorBelt that handles the loading of .obj objects and rotates them. Because they inherit the conveyorBelt attributes, the rotating objects are able to be conveyed along with the conveyor belt.
+
+I created all the rotating objects with ZBrush and the room pieces with Maya, and textured them using Substance Painter.
+
+An unexpected challenge was texturing the objects without making the project lag. I had to drastically reduce the polygon count of each object to make Processing not drop so many frames. Because of this challenge, I am not able to decorate the room like I had originally planned, which was a restaurant. Instead, it is a different type of room that looks a bit more sinister.
+
+
+Thanks to Josh Castle for making the importable library for QueasyCam and YouTube for their Audio Library.
+
+The song Rubix Cube by Audionautix is licensed under a Creative Commons Attribution license (https://creativecommons.org/licenses/by/4.0/)
+Artist: http://audionautix.com/
